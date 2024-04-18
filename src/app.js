@@ -15,6 +15,13 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))  // for special cha
 app.use(express.static("public"))  //for storing files and folders
 app.use(cookieParser()) // for access and set the cookies from my server (crud operations)
 
+//routes import 
+import userRouter from './routes/user.routes.js'
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+// http://localhost:8000/api/v1/users/_______
+
 export { app }
 
 
